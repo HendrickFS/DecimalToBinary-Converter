@@ -34,7 +34,7 @@ h1{
     position: absolute;
     font-size: 70px;
     color: #c5b201;
-    font-family: 'Minecraft', sans-serif;
+    font-family: Arial-Black, sans-serif;
     font-size: 50px;
     text-shadow: 
                -1px -2px 0px #3a3401, 
@@ -74,7 +74,7 @@ label{
     position: relative;
     font-size: 40px;
     color: #c5b201;
-    font-family: 'Minecraft', sans-serif;
+    font-family: Arial-Black, sans-serif;
     text-shadow: 
                -1px -2px 0px #3a3401, 
                -1px 2px 0px #3a3401,                    
