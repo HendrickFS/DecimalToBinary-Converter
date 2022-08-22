@@ -29,7 +29,7 @@ function Conversion(){
     //Data Input
     const decimalTf = document.querySelector('#enter');
     const binaryTf = document.querySelector('#exit');
-    var decimal = decimalTf.value;
+    var decimal = decimalTf.value.replace(",",".");
     var decimal = Number(decimal);
     
     //Data Processing
@@ -50,10 +50,7 @@ function Conversion(){
         decimal = decimal * 2;
         exponent--;
     }
-    var decimalBefPoint = Math.floor(decimal);
     var decimalAfPoint = decimal % 1;
-
-    var binaryBefPoint = "";
     var binaryAfPoint = "";
     
     //Exponent conversion
@@ -61,19 +58,16 @@ function Conversion(){
     var binaryExp = integerToBinary(expPlusExcess);
     
     //Mantissa Conversion
-    var flagStart = 0;
     var countBits = 0;
-    while (decimalAfPoint > 0 && countBits <= 23){
+    while (decimalAfPoint > 0 && countBits < 23){
         decimalAfPoint = decimalAfPoint * 2;
         if (decimalAfPoint >= 1){
             binaryAfPoint += "1";
-            flagStart = 1;
             countBits++;
         } else {
             binaryAfPoint += "0";
-            if (flagStart == 1){
-                countBits++;
-            }
+            countBits++;
+            
         }
         if (decimalAfPoint >= 1){
             decimalAfPoint--;
@@ -90,8 +84,4 @@ function Conversion(){
 
     //Data Output
     binaryTf.value = binary;
-    console.log(decimal);
-    console.log("mantissa: ",binaryAfPoint);
-    console.log("expoente binario: ",binaryExp)
-    console.log("expoente: ",exponent);
 }
