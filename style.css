@@ -1,8 +1,8 @@
 body{
     background-color:rgb(36, 33, 33) ;
-    background: linear-gradient(90deg,#240e41,#4e028b,#240e41);
+    background: linear-gradient(30deg,#111111,#111111,#111111,#111111,#111111,#111111, #52065c,#111111,#111111,#111111,#111111,#111111,#111111);
     background-size: 300% 300%;
-    animation: colors 5s ease infinite;
+    animation: colors 10s ease infinite;
 }
 @keyframes colors {
     0%{
@@ -28,78 +28,102 @@ body{
     flex-direction: column;
 }
 h1{
-    top: 15%;
+    border-style: solid;
+    border-radius: 20px;
+    top: 07%;
     left: 30%;
+    scale: 2;
     margin-bottom: 50px;
     position: absolute;
     font-size: 70px;
-    color: #c5b201;
-    font-family: Arial-Black, sans-serif;
+    padding: 10px;
+    font-family: Arial-Black, Helvetica, sans-serif;
     font-size: 50px;
-    text-shadow: 
-               -1px -2px 0px #3a3401, 
-               -1px 2px 0px #3a3401,                    
-                1px -2px 0px #3a3401,                  
-                1px 2px 0px #3a3401;
-    animation: title 5s ease infinite;
+    animation: title 3s ease infinite;
 }
 @keyframes title {
     0%{
         color: rgb(186, 221, 31);
+        text-shadow: 0px 0px 10px rgb(186, 221, 31),
+                    0px 0px 10px rgb(186, 221, 31);
     }
     25%{
         color: rgb(66, 206, 38);
+        text-shadow: 0px 0px 10px rgb(66, 206, 38);
     }
     50%{
         color: rgb(7, 206, 212);
+        text-shadow: 0px 0px 10px rgb(7, 206, 212);
     }
     75%{
         color: rgb(37, 221, 31);
+        text-shadow: 0px 0px 10px rgb(37, 221, 31);
     }
     100%{
         color: rgb(186, 221, 31);
+        text-shadow: 0px 0px 10px rgb(186, 221, 31);
     }
 }
-
+@keyframes bt{
+    0%{
+        color: rgb(186, 221, 31);
+        border-color: rgb(186, 221, 31);
+        text-shadow: 0px 0px 10px rgb(186, 221, 31),
+                    0px 0px 10px rgb(186, 221, 31);
+    }
+    25%{
+        color: rgb(66, 206, 38);
+        border-color: rgb(66, 206, 38);
+        text-shadow: 0px 0px 10px rgb(66, 206, 38);
+    }
+    50%{
+        color: rgb(7, 206, 212);
+        border-color: rgb(7, 206, 212);
+        text-shadow: 0px 0px 10px rgb(7, 206, 212);
+    }
+    75%{
+        color: rgb(37, 221, 31);
+        border-color: rgb(37, 221, 31);
+        text-shadow: 0px 0px 10px rgb(37, 221, 31);
+    }
+    100%{
+        color: rgb(186, 221, 31);
+        border-color: rgb(186, 221, 31);
+        text-shadow: 0px 0px 10px rgb(186, 221, 31);
+    }
+}
 input{
     border-color: #70660b;
-    background-color:#d8cd6a;
+    background-color:#e693f1;
     position: relative;
     width: 300px;
     height: 40px;
     border-radius: 15px;
 }
 label{
-    animation: title 5s ease infinite;
+    animation: title 3s ease infinite;
     position: relative;
     font-size: 40px;
-    color: #c5b201;
-    font-family: Arial-Black, sans-serif;
-    text-shadow: 
-               -1px -2px 0px #3a3401, 
-               -1px 2px 0px #3a3401,                    
-                1px -2px 0px #3a3401,                  
-                1px 2px 0px #3a3401;
+    font-family: Luminari, fantasy;
 }
 button{
+    animation: title 3s ease infinite;
     position: relative;
-    color: #3a3401;
-    font-family: 'Minecraft', sans-serif;
-    font-size: 16px;
+    font-family: Luminari, fantasy;
+    font-size: 20px;
     margin: 20px;
     position: relative;
     left: 70%;
     border-style: solid;
     border-radius: 10px;
     border-width: 3px;
-    border-color: #3a3401;
+    border-color: #db5fd1;
     width: 120px;
     height: 50px;
-    background-color: #c5b201;
+    background-color: #111111;
 }
 button:hover{
     border-radius: 50px;
-    background-color: #eed80e;
     scale: 1.2;
     transition: all 0.8s ease-in-out ;
 }
