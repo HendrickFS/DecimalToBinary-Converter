@@ -36,58 +36,62 @@ function Conversion(){
     else{
 
         var decimal = Number(decimal);
-        
-        //Data Processing
-        var binary = "";
-        if (decimal >= 0){
-            binary += "0";
+        if (decimal == 0){
+            binaryTf.value = "00000000000000000000000000000000";
         }else{
-            binary += "1";
-            decimal=-decimal;
-        }
 
-        var exponent = 0;
-        while (decimal >= 2){
-            decimal = decimal / 2;
-            exponent++;
-        }
-        while (decimal < 1){
-            decimal = decimal * 2;
-            exponent--;
-        }
-        var decimalAfPoint = decimal % 1;
-        var binaryAfPoint = "";
-        
-        //Exponent conversion
-        var expPlusExcess = 127 + exponent;
-        var binaryExp = integerToBinary(expPlusExcess);
-        
-        //Mantissa Conversion
-        var countBits = 0;
-        while (decimalAfPoint > 0 && countBits < 23){
-            decimalAfPoint = decimalAfPoint * 2;
-            if (decimalAfPoint >= 1){
-                binaryAfPoint += "1";
-                countBits++;
-            } else {
+            //Data Processing
+            var binary = "";
+            if (decimal >= 0){
+                binary += "0";
+            }else{
+                binary += "1";
+                decimal=-decimal;
+            }
+            
+            var exponent = 0;
+            while (decimal >= 2){
+                decimal = decimal / 2;
+                exponent++;
+            }
+            while (decimal < 1){
+                decimal = decimal * 2;
+                exponent--;
+            }
+            var decimalAfPoint = decimal % 1;
+            var binaryAfPoint = "";
+            
+            //Exponent conversion
+            var expPlusExcess = 127 + exponent;
+            var binaryExp = integerToBinary(expPlusExcess);
+            
+            //Mantissa Conversion
+            var countBits = 0;
+            while (decimalAfPoint > 0 && countBits < 23){
+                decimalAfPoint = decimalAfPoint * 2;
+                if (decimalAfPoint >= 1){
+                    binaryAfPoint += "1";
+                    countBits++;
+                } else {
+                    binaryAfPoint += "0";
+                    countBits++;
+                    
+                }
+                if (decimalAfPoint >= 1){
+                    decimalAfPoint--;
+                }
+            }
+            while(countBits < 23){
                 binaryAfPoint += "0";
                 countBits++;
-                
             }
-            if (decimalAfPoint >= 1){
-                decimalAfPoint--;
-            }
+            
+            
+            binary += binaryExp;
+            binary += binaryAfPoint;
+            
+            //Data Output
+            binaryTf.value = binary;
         }
-        while(countBits < 23){
-            binaryAfPoint += "0";
-            countBits++;
-        }
-
-
-        binary += binaryExp;
-        binary += binaryAfPoint;
-
-        //Data Output
-        binaryTf.value = binary;
     }
-    }
+}
