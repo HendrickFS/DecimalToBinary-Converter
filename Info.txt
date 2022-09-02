@@ -1,0 +1,3 @@
+O projeto está também no github e hospedado no github pages.
+	> Repositório: https://github.com/HendrickFS/DecimalToBinary-Converter
+	> Página: https://hendrickfs.github.io/DecimalToBinary-Converter/
